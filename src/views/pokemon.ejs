@@ -21,6 +21,18 @@
         <p>Altura: <%= pokemon.height %> cm</p>
         <p>Peso: <%= pokemon.weight %> kg</p>
 
+        <h2 class="mt-5">Status:</h2>
+        <div>
+            <% pokemon.stats.forEach(stat => { %>
+                <div class="mb-3">
+                    <label><%= stat.stat.name %>: <%= stat.base_stat %></label>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: <%= stat.base_stat %>%;" aria-valuenow="<%= stat.base_stat %>" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
         <h2 class="mt-5">Habilidades:</h2>
         <div class="scrollable">
             <ul class="list-group bg-dark">

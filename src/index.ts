@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
 app.get('/', (request: Request, response: Response) => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=20")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=200")
         .then(res => res.json())
         .then(data => {
             response.render('index', { results: data.results });
